@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Heart, Users } from 'lucide-react';
+import { Link } from "react-router-dom";
 
 // Import your images
 import happyChildren from '../images/happychilldren.jpeg';
@@ -29,7 +30,6 @@ const Hero = () => {
     <section className="py-40 lg:py-70">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
           <div className="space-y-8">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
               <span className="text-green-600">Nepal's Platform for Change,</span>
@@ -42,14 +42,23 @@ const Hero = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-green-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-green-600 transition-colors flex items-center justify-center">
-                Donate Now
-                <Heart className="ml-2 w-5 h-5" />
-              </button>
-              <button className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-lg text-lg font-semibold hover:border-gray-400 transition-colors">
-                Learn More
-              </button>
-            </div>
+            
+            <Link
+              to="/fundraisers"
+              className="bg-green-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-green-600 transition-colors flex items-center justify-center"
+            >
+              Donate Now
+              <Heart className="ml-2 w-5 h-5" />
+            </Link>
+
+          
+            <Link
+              to="/about"
+              className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-lg text-lg font-semibold hover:border-gray-400 transition-colors flex items-center justify-center"
+            >
+              Learn More
+            </Link>
+          </div>
           </div>
 
           {/* Right Image & Tag */}
